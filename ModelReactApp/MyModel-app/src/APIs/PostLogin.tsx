@@ -1,16 +1,16 @@
 import { useMutation } from "react-query";
-import { request } from "../Utilities";
-import JwtParser from "../Parsejwt";
-import useAuth from "../../Authentication/useAuthentication";
+import { MakeRequest } from "./Utilities";
+import JwtParser from "./jwtParse";
+import useAuth from "../Authentication/UseAuthentication";
 import { useNavigate } from "react-router-dom";
-import type { AccountLoginDto } from "../../Interface/AccountInterface";
+import type { AccountLoginDto } from "../Interface/AccountInterface";
 
 
 export const login = async (data: AccountLoginDto) => 
 {
   localStorage.setItem("Username", data.email);
   localStorage.setItem("Password", data.password);
-  const response = await request({
+  const response = await MakeRequest({
     url: `Account/Login`,
     method: "POST",
     data: data,

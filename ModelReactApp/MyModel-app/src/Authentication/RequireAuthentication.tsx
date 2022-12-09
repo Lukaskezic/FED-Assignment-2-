@@ -1,6 +1,6 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import UseAuthentication from "./UseAuthentication";
-import JwtParser from "../APIs/Parsejwt";
+import JwtParser from "../APIs/jwtParse";
 import React from "react";
 
 const RequireAuthentication = ({ allowedRoles }: { allowedRoles: any }) => 
