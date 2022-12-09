@@ -3,30 +3,33 @@ import { server } from "./Configs";
 
 const client = axios.create({ baseURL: server });
 
-const getToken = () => {
+const getUtiToken = () => {
   return localStorage.getItem("token");
 };
 
-export const MakeRequest = ({ ...options }) => {
-  client.defaults.headers.common["Authorization"] = `Bearer ${getToken()}`;
-  const onSuccess = (response: any) => {
+export const MakeRequest = ({ ...options }) => 
+{
+  client.defaults.headers.common["Authorization"] = `Bearer ${getUtiToken()}`;
+  const onSuccess = (response: any) => 
+  {
     return response;
   };
-  const onError = (error: any) => {
+  const onError = (error: any) => 
+  {
     return error;
   };
   return client(options).then(onSuccess).catch(onError);
 };
 
-export const SetupInterceptors = () => {
+export const SetupInterceptors = () => 
+{
   client.interceptors.response.use(
-    function (response) {
+    function (response) 
+    {
       return response;
     },
-    (error) => {
-      var status = error.response.status;
-      if (status === 401) {
-      }
+    (error) => 
+    {
       return error;
     }
   );

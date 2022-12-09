@@ -2,16 +2,24 @@ import { useQuery } from "react-query";
 import { MakeRequest } from "./Utilities";
 import React from "react";
 
-const fetchJobs = async () => {
-  const response = await MakeRequest({ url: "jobs", method: "get" });
-  if (response.status === 304) {
-    throw new Error("There was an error fetching the job");
+const FetchAJobs = async () => 
+{
+  const response = await MakeRequest(
+    { 
+      url: "Jobs", method: "Get" 
+    });
+  
+    if (response.status === 400) 
+  {
+    throw new Error("Error");
   }
   return response;
 };
 
-const GetJobList = () => {
-  return useQuery("jobsKey", fetchJobs, {
+const GetJobList = () => 
+{
+  return useQuery("JobKey", FetchAJobs, 
+  {
     refetchOnWindowFocus: false,
   });
 };

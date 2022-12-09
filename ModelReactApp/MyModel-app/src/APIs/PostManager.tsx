@@ -3,7 +3,7 @@ import { MakeRequest } from "./Utilities";
 import type { ManagerRegisterDto } from "../Interface/ManagerInterface";
 import React from "react";
 
-export const RegisterManager = async (data: ManagerRegisterDto) => 
+export const RegisterAManager = async (data: ManagerRegisterDto) => 
 {
   return await MakeRequest({
     url: `Manager`,
@@ -13,9 +13,9 @@ export const RegisterManager = async (data: ManagerRegisterDto) =>
 };
 
 export const UserRegisteredManager = () => {
-  return useMutation(RegisterManager, {
+  return useMutation(RegisterAManager, {
     onSuccess: () => {
-      console.log("A manager has succesfully been created");
+      console.log("A manager has succesfully been created succesfully");
     },
     onError: (error) => {
       console.log((error as any).message);

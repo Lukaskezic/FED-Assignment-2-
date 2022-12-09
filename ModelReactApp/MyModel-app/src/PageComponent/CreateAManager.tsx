@@ -22,7 +22,7 @@ const CreateAManager = () =>
     register(manager);
   };
   return (
-    <div className="border rounded border-grey-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
+    <div className="manager">
       <div className="flex flex-col">
         <form className="flex flex-wrap">
           <div className="flex flex-col mx-2">

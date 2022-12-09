@@ -26,7 +26,7 @@ export default function CreateJob()
   };
 
   return (
-    <div className="border rounded border-Black-400 bg-grey overflow-hidden shadow-lg flex p-4 justify-center">
+    <div className="job">
       <div className="flex flex-col">
         <form className="flex flex-wrap">
           <div className="flex flex-col mx-2">

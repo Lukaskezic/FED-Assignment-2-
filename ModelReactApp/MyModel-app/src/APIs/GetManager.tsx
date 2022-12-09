@@ -1,25 +1,28 @@
 import { useQuery } from "react-query";
 import { MakeRequest } from "./Utilities";
 import React from "react";
-const fetchAllManager = async () => 
+
+const fetchAllManagers = async () => 
 {
 const response = await MakeRequest(
-    { url: "managers", method: "get"});
-  if (response.status === 304) 
+    { 
+      url: "managers", method: "get"
+    });
+  
+if (response.status === 600) 
   {
-    throw new Error("Problem fetching data");
+    throw new Error("Problem");
   }
-
   return response;
 };
 
 
-const GetManagersList = () => 
+const GetTheManagersList = () => 
 {
-  return useQuery("managersKey", fetchAllManager, 
+  return useQuery("ManagerListKey", fetchAllManagers, 
   {
     refetchOnWindowFocus: false,
   });
 };
 
-export default GetManagersList;
+export default GetTheManagersList;

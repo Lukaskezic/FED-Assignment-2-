@@ -1,12 +1,16 @@
 import { useQuery } from "react-query";
-import { MakeRequest } from "./Utilities";
 import React from "react";
-const fetchAllModelsFromJobs = async () => 
+import { MakeRequest } from "./Utilities";
+const fetchModelsFromJobs = async () => 
 {
-  const response = await MakeRequest({ url: "models", method: "get" });
-  if (response.status === 304) 
+  const response = await MakeRequest(
+  { 
+    url: "models", method: "get" 
+  });
+
+  if (response.status === 600) 
   {
-    throw new Error("There was a problem fetching the data");
+    throw new Error("Problem occured during fetch");
   }
   return response;
 };
@@ -14,7 +18,7 @@ const fetchAllModelsFromJobs = async () =>
 
 const GetModelsList = () => 
 {
-  return useQuery("modelsKey", fetchAllModelsFromJobs, 
+  return useQuery("ModelKey", fetchModelsFromJobs, 
   {
     refetchOnWindowFocus: false,
   });

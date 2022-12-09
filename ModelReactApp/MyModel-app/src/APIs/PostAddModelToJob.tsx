@@ -1,11 +1,11 @@
-
+import type { JobModelDto } from "../Interface/JobInterface";
 import { useMutation, useQueryClient } from "react-query";
 import { MakeRequest } from "./Utilities";
-import type { JobModelDto } from "../Interface/JobInterface";
 
-export const registerJob = async (data: JobModelDto) => 
+export const registerAJob = async (data: JobModelDto) => 
 {
-  return await MakeRequest({
+  return await MakeRequest(
+  {
     url: `Jobs/${data.jobId}/model/${data.modelId}`,
     method: "POST",
     data: data,
@@ -17,8 +17,8 @@ export const registerJob = async (data: JobModelDto) =>
 export const UseAddedModel = () => 
 {
   const queryClient = useQueryClient();
-  return useMutation(registerJob, 
-    {
+  return useMutation(registerAJob, 
+  {
     onSuccess: () => 
     {
       console.log("The model has been added to the job successfully");

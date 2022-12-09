@@ -4,7 +4,8 @@ import { ExpenseDto } from "../Interface/ExpenseInterface";
 import { Button, TextInput, Label } from "flowbite-react";
 import React from "react";
 
-const AddAnExpense = () => {
+const AddAnExpense = () => 
+{
   const { mutate: expense } = UseCreatedExpense();
   const [modelId, setModelId] = useState<number>(0);
   const [jobId, setJobId] = useState<number>(0);
@@ -12,8 +13,10 @@ const AddAnExpense = () => {
   const [date, setDate] = useState<string>("");
   const [textValue, setTextValue] = useState<string>("");
 
-  const handleOnSubmit = () => {
-    const expenseDto: ExpenseDto = {
+  const handleOnSubmit = () => 
+  {
+    const expenseDto: ExpenseDto = 
+    {
       modelId: modelId,
       jobId: jobId,
       date: date,
@@ -24,7 +27,7 @@ const AddAnExpense = () => {
   };
 
   return (
-    <div className="border rounded border-Black-400 bg-grey overflow-hidden shadow-lg flex p-4 justify-center">
+    <div className="Expenses">
       <form className="flex flex-wrap">
         <div className="flex flex-col mx-2">
           <Label>Model Id</Label>
@@ -55,7 +58,7 @@ const AddAnExpense = () => {
           />
         </div>
 
-        <div className="flex flex-col mx-2">
+        <div className="flex col class">
           <Label>Text</Label>
           <TextInput
             type="Text"
@@ -68,12 +71,12 @@ const AddAnExpense = () => {
           />
         </div>
 
-        <div className="flex flex-col mx-2">
+        <div className="flex col class">
           <Label>Date</Label>
           <TextInput
             type="date"
             required
-            placeholder="2022-12-03T20:42:51.203Z"
+            placeholder="current date"
             value={date}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setDate(e.target.value)
@@ -81,7 +84,7 @@ const AddAnExpense = () => {
           />
         </div>
 
-        <div className="flex flex-col mx-2">
+        <div className="flex col class">
           <Label>Amount</Label>
           <TextInput
             required
@@ -95,7 +98,7 @@ const AddAnExpense = () => {
             }
           />
         </div>
-        <div className="flex flex-col mx-2">
+        <div className="flex col class">
           <Label>Add Expense To Job</Label>
           <Button onClick={handleOnSubmit}> Add Expense</Button>
         </div>

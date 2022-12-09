@@ -10,7 +10,8 @@ export const login = async (data: AccountLoginDto) =>
 {
   localStorage.setItem("Username", data.email);
   localStorage.setItem("Password", data.password);
-  const response = await MakeRequest({
+  const response = await MakeRequest(
+  {
     url: `Account/Login`,
     method: "POST",
     data: data,
@@ -37,17 +38,19 @@ export const useLogin = () =>
       console.log(role);
       localStorage.setItem("role", role);
 
-      const user = localStorage.getItem("Username");
-      const pwd = localStorage.getItem("Password");
+      const User = localStorage.getItem("Username");
+      const Pass = localStorage.getItem("Password");
 
-      setAuth([user, pwd, role, accessToken]);
-      console.log(user + " has logged in");
+      setAuth([User, Pass, role, accessToken]);
+      console.log(User + " has logged in");
     },
-    onError: (error) => {
+    onError: (error) => 
+    {
       console.log("Log In failed, try again");
       console.log((error as any).message);
     },
-    onSettled: () => {
+    onSettled: () => 
+    {
       const role = localStorage.getItem("role");
       navigate("/" + role);
     },

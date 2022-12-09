@@ -3,11 +3,16 @@ import UseAuthentication from "./UseAuthentication";
 import JwtParser from "../APIs/jwtParse";
 import React from "react";
 
-const RequireAuthentication = ({ allowedRoles }: { allowedRoles: any }) => 
+const RequireAuthentication = ({ 
+    allowedRoles 
+  }: 
+  { 
+    allowedRoles: any 
+  }) => 
 {
   const { auth } = UseAuthentication();
   const location = useLocation();
-  const roles = JwtParser(localStorage.getItem("token") as string)[
+  const roles = JwtParser(localStorage.getItem("Authtoken") as string)[
     "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
   ];
   return allowedRoles?.includes(roles) ? (

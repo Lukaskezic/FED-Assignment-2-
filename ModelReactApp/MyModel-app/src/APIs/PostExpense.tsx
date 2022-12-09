@@ -3,7 +3,7 @@ import { MakeRequest } from "./Utilities";
 import { ExpenseDto } from "../Interface/ExpenseInterface";
 
 
-export const CreateExpense = async (data: ExpenseDto) => 
+export const CreateAnExpense = async (data: ExpenseDto) => 
 {
   return await MakeRequest({
     url: `Expenses`,
@@ -14,11 +14,11 @@ export const CreateExpense = async (data: ExpenseDto) =>
 
 export const UseCreatedExpense = () => 
 {
-  return useMutation(CreateExpense, 
+  return useMutation(CreateAnExpense, 
     {
     onSuccess: () => 
     {
-      console.log("The expense has succesfully been added");
+      console.log("The expense is added successfully");
     },
     onError: (error) => {
       console.log((error as any).message);

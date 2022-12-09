@@ -1,8 +1,8 @@
-import { useMutation } from "react-query";
-import { MakeRequest } from "./Utilities";
 import type { JobRegisterDto } from "../Interface/JobInterface";
+import { MakeRequest } from "./Utilities";
+import { useMutation } from "react-query";
 
-export const registerJob = async (data: JobRegisterDto) => 
+export const registerAJob = async (data: JobRegisterDto) => 
 {
   return await MakeRequest({
     url: `Jobs`,
@@ -11,16 +11,13 @@ export const registerJob = async (data: JobRegisterDto) =>
   });
 };
 
-
-
-
 export const useRegisterJob = () => 
 {
-  return useMutation(registerJob, 
+  return useMutation(registerAJob, 
     {
     onSuccess: () => 
     {
-      console.log("The job has been added");
+      console.log("The job has been added successfully");
     },
     onError: (error) => 
     {
