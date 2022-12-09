@@ -1,9 +1,9 @@
 import { useQuery } from "react-query";
-import { request } from "../Utilities";
-
+import { MakeRequest } from "./Utilities";
+import React from "react";
 const fetchAllModelsFromJobs = async () => 
 {
-  const response = await request({ url: "models", method: "get" });
+  const response = await MakeRequest({ url: "models", method: "get" });
   if (response.status === 304) 
   {
     throw new Error("There was a problem fetching the data");

@@ -1,10 +1,11 @@
 import { useMutation } from "react-query";
-import { request } from "../Utilities";
-import type { ModelRegisterDto } from "../../Interface/ModelInterface";
+import { MakeRequest } from "./Utilities";
+import type { ModelRegisterDto } from "../Interface/ModelInterface";
+
 
 export const RegisterModel = async (data: ModelRegisterDto) => 
 {
-  return await request({
+  return await MakeRequest({
     url: `Models`,
     method: "POST",
     data: data,

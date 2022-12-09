@@ -1,11 +1,11 @@
 import { useMutation } from "react-query";
-import { request } from "../Utilities";
-import { ExpenseDto } from "../../Interface/ExpenseInterface";
+import { MakeRequest } from "./Utilities";
+import { ExpenseDto } from "../Interface/ExpenseInterface";
 
 
 export const CreateExpense = async (data: ExpenseDto) => 
 {
-  return await request({
+  return await MakeRequest({
     url: `Expenses`,
     method: "POST",
     data: data,

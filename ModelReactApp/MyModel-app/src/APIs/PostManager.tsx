@@ -1,11 +1,11 @@
 import { useMutation } from "react-query";
-import { request } from "../Utilities";
-import type { ManagerRegisterDto } from "../../Interface/ManagerInterface";
-
+import { MakeRequest } from "./Utilities";
+import type { ManagerRegisterDto } from "../Interface/ManagerInterface";
+import React from "react";
 
 export const RegisterManager = async (data: ManagerRegisterDto) => 
 {
-  return await request({
+  return await MakeRequest({
     url: `Manager`,
     method: "POST",
     data: data,

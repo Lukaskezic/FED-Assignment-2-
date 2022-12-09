@@ -7,7 +7,7 @@ const getToken = () => {
   return localStorage.getItem("token");
 };
 
-export const request = ({ ...options }) => {
+export const MakeRequest = ({ ...options }) => {
   client.defaults.headers.common["Authorization"] = `Bearer ${getToken()}`;
   const onSuccess = (response: any) => {
     return response;

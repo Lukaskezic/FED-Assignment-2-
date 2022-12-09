@@ -1,9 +1,9 @@
 import { useQuery } from "react-query";
-import { request } from "../Utilities";
-
+import { MakeRequest } from "./Utilities";
+import React from "react";
 const fetchAllManager = async () => 
 {
-const response = await request(
+const response = await MakeRequest(
     { url: "managers", method: "get"});
   if (response.status === 304) 
   {

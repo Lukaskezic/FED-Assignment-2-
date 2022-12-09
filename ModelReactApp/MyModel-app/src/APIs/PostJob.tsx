@@ -1,10 +1,10 @@
 import { useMutation } from "react-query";
-import { request } from "../Utilities";
-import type { JobRegisterDto } from "../../Interface/JobInterface";
+import { MakeRequest } from "./Utilities";
+import type { JobRegisterDto } from "../Interface/JobInterface";
 
 export const registerJob = async (data: JobRegisterDto) => 
 {
-  return await request({
+  return await MakeRequest({
     url: `Jobs`,
     method: "POST",
     data: data,
