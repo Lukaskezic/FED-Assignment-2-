@@ -2,23 +2,25 @@ import { ChangeEvent, useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
 import type { AccountLoginDto } from "../Interface/AccountInterface";
 import { useLogin } from "../APIs/PostLogin";
-import React from "react";
 
-const Login = () => {
+const Login = () => 
+{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { mutate: login } = useLogin();
 
-  const handleLoginSubmit = (e: any) => {
+  const handleLoginSubmit = (e: any) => 
+  {
     e.preventDefault();
-    const userLogin: AccountLoginDto = {
+    const userLogin: AccountLoginDto = 
+    {
       email: email,
       password: password,
     };
     login(userLogin);
   };
   return (
-    <div className="flex justify-center border-4 rounded border-blue-500 py-4">
+    <div className="flex justify-center border-4 rounded border-black-500 py-4">
       <form className="flex flex-col items-center">
         <div className="flex flex-col items-center py-2">
           <Label className="mx-4 pb-2">Email</Label>

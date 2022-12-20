@@ -1,8 +1,7 @@
-import { Spinner } from "flowbite-react";
-import GetJobList from "../APIs/GetJob";
 import AddExpense from "../PageComponent/AddExpense";
 import JobList from "../PageComponent/GetJob";
-import React from "react";
+import { Spinner } from "flowbite-react";
+import GetJobList from "../APIs/GetJob"
 
 const Model = () => 
 {

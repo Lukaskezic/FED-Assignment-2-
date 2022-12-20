@@ -7,7 +7,6 @@ import Layout from "./Layout/Layout";
 import "./index.css";
 import { SetupInterceptors } from "./APIs/Utilities";
 import RequireAuthentication from "./Authentication/RequireAuthentication";
-import React from "react";
 
 const App = () => 
 {

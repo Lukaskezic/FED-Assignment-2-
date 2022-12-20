@@ -1,14 +1,13 @@
 import { Spinner } from "flowbite-react";
-import GetTheManagerList from "../APIs/GetManager";
-import GetTheJobList from "../APIs/GetJob";
 import CreateManager from "../PageComponent/CreateAManager";
-import CreateModel from "../PageComponent/CreateAModel";
-import CreateJob from "../PageComponent/CreateAJob";
-import AddModel from "../PageComponent/AddModel";
 import ManagerList from "../PageComponent/GetManagerList";
 import JobList from "../PageComponent/GetJob";
 import RemoveModel from "../PageComponent/RemoveModelsFromJobs";
-import React from "react";
+import CreateModel from "../PageComponent/CreateAModel";
+import CreateJob from "../PageComponent/CreateAJob";
+import AddModel from "../PageComponent/AddModel";
+import GetTheManagerList from "../APIs/GetManager";
+import GetTheJobList from "../APIs/GetJob";
 
 const Mananger = () => 
 {
