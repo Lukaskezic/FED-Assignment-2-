@@ -1,7 +1,6 @@
 import { useMutation } from "react-query";
 import { MakeRequest } from "./Utilities";
 import type { JobModelDto } from "../Interface/JobInterface";
-import React from "react";
 export const register = async (data: JobModelDto) => 
 {
   return await MakeRequest({

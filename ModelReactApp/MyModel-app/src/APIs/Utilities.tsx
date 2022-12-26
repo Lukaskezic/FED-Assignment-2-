@@ -30,6 +30,10 @@ export const SetupInterceptors = () =>
     },
     (error) => 
     {
+      var status = error.response.status;
+      if (status === 401) 
+      {
+      }
       return error;
     }
   );

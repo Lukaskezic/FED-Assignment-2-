@@ -1,6 +1,5 @@
 import { useQuery } from "react-query";
 import { MakeRequest } from "./Utilities";
-import React from "react";
 
 const FetchAJobs = async () => 
 {
@@ -9,7 +8,7 @@ const FetchAJobs = async () =>
       url: "Jobs", method: "Get" 
     });
   
-    if (response.status === 400) 
+    if (response.status === 304) 
   {
     throw new Error("Error");
   }

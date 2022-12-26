@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 import { UseCreatedExpense } from "../APIs/PostExpense";
 import { ExpenseDto } from "../Interface/ExpenseInterface";
 import { Button, TextInput, Label } from "flowbite-react";
-import React from "react";
+
 
 const AddAnExpense = () => 
 {
@@ -27,7 +27,7 @@ const AddAnExpense = () =>
   };
 
   return (
-    <div className="Expenses">
+    <div className="border rounded border-blue-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
       <form className="flex flex-wrap">
         <div className="flex flex-col mx-2">
           <Label>Model Id</Label>

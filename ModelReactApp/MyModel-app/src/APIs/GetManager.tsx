@@ -1,12 +1,12 @@
 import { useQuery } from "react-query";
 import { MakeRequest } from "./Utilities";
-import React from "react";
+
 
 const fetchAllManagers = async () => 
 {
 const response = await MakeRequest(
     { 
-      url: "managers", method: "get"
+      url: "Managers", method: "Get"
     });
   
 if (response.status === 600) 

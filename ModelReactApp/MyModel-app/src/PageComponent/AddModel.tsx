@@ -17,7 +17,7 @@ const AddModel = () => {
     register(expenseDto);
   };
   return (
-    <div className="model">
+    <div className="border rounded border-black-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
       <div className="flex flex-col">
         <form className="flex flex-wrap">
           <div className="flex flex-col mx-2">

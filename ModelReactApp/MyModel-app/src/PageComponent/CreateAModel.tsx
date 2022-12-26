@@ -51,7 +51,7 @@ const CreateAModel = () =>
   };
 
   return (
-    <div className="border rounded border-grey-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
+    <div className="border rounded border-black-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
       <div className="flex flex-col">
         <form className="flex flex-wrap">
           <div className="flex flex-col mx-2">
@@ -69,9 +69,9 @@ const CreateAModel = () =>
           <div className="flex flex-col mx-2">
             <Label>Last name</Label>
             <TextInput
-              type="text"
+              type="Text"
               required
-              placeholder="Doe"
+              placeholder="Akdag"
               value={lastName}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setLastName(e.target.value)

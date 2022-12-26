@@ -3,13 +3,14 @@ import { useJobRemoveModel } from "../APIs/RemoveModelFromJob";
 import type { JobModelDto } from "../Interface/JobInterface";
 import { Button, TextInput, Label } from "flowbite-react";
 import React from "react";
+
 const RemoveModelFromTheJob = () => 
 {
   const { mutate: register } = useJobRemoveModel();
   const [modelId, setModelId] = useState<number>(0);
   const [jobId, setJobId] = useState<number>(0);
 
-  const handleJobRemoval = () => {
+  const handleOnSubmit = () => {
     const expenseDto: JobModelDto = {
       modelId: modelId,
       jobId: jobId,
@@ -51,7 +52,7 @@ const RemoveModelFromTheJob = () =>
           </div>
           <div className="flex flex-col mx-2">
             <Label>Remove Model from Job</Label>
-            <Button onClick={handleJobRemoval}>Submit</Button>
+            <Button onClick={handleOnSubmit}>Submit</Button>
           </div>
         </form>
       </div>

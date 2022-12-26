@@ -4,6 +4,7 @@ import type { JobRegisterDto } from "../Interface/JobInterface";
 import { useRegisterJob } from "../APIs/PostJob";
 import { Button, Label, TextInput } from "flowbite-react";
 import React from "react";
+
 export default function CreateJob() 
 {
   const [customer, setCustomer] = useState("");
@@ -26,7 +27,7 @@ export default function CreateJob()
   };
 
   return (
-    <div className="job">
+    <div className="border rounded border-blue-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
       <div className="flex flex-col">
         <form className="flex flex-wrap">
           <div className="flex flex-col mx-2">

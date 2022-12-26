@@ -13,15 +13,15 @@ const Navigation = () =>
         <Navbar.Toggle className="hover:text-green-500 md:hover:text-blue-500" />
         <Navbar.Collapse>
           <Navbar.Link className="hover:text-green-500 md:hover:text-blue-500" >
-          <Link to="/manager">Manager</Link>
+            <Link to="/manager">Manager</Link>
           </Navbar.Link>
 
           <Navbar.Link className="hover:text-green-500 md:hover:text-blue-500" >
-          <Link to="/model">Model</Link>
+            <Link to="/model">Model</Link>
           </Navbar.Link>
 
           <Navbar.Link className="hover:text-green-500 md:hover:text-blue-500" >
-          <Link to="/login">Login</Link> 
+            <Link to="/login">Login</Link> 
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>

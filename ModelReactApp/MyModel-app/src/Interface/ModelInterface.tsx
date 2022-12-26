@@ -1,4 +1,5 @@
-export type ModelRegisterDto = {
+export type ModelRegisterDto = 
+{
     firstName: string;
     lastName: string;
     email: string;
@@ -18,14 +19,16 @@ export type ModelRegisterDto = {
     password: string;
   };
   
-  export type account = {
+  export type account = 
+  {
     efAccountId: number;
     email: string;
     pwHash: string;
     isManager: true;
   };
   
-  export type ModelDto = {
+  export type ModelDto = 
+  {
     firstName: string;
     lastName: string;
     email: string;

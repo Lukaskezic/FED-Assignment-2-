@@ -1,5 +1,6 @@
 import type { ModelDto } from "./ModelInterface";
-export type JobRegisterDto = {
+export type JobRegisterDto = 
+{
   customer: string;
   startdate: string;
   days: number;
@@ -7,7 +8,8 @@ export type JobRegisterDto = {
   comments: string;
 };
 
-export type Job = {
+export type Job = 
+{
   jobId: number;
   customer: string;
   startDate: string;
@@ -17,11 +19,13 @@ export type Job = {
   models: ModelDto[];
 };
 
-export type Jobs = {
+export type Jobs = 
+{
   jobs: Job[];
 };
 
-export type JobModelDto = {
+export type JobModelDto = 
+{
   jobId: number;
   modelId: number;
 };
