@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "target": "es5",
@@ -23,7 +22,7 @@
   },
   "include": [
     "src",
-    "src/Layout/*.tsx",
+    "src/layoutReact/*.tsx",
     "src/Pages/*tsx",
     "**/*.ts",
     "**/*.tsx",
