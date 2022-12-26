@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./Pages/LoginPage";
-import Model from "./Pages/ModelPage";
-import Manager from "./Pages/ManagerPage";
-import NotAuthorized from "./Pages/AuthorizationDenied";
+import Login from "./Pages/Login";
+import Model from "./Pages/Model";
+import Manager from "./Pages/Manager";
+import NotAuthorized from "./Pages/NotAuthorized";
 import Layout from "./Layout/Layout";
 import "./index.css";
 import { SetupInterceptors } from "./APIs/Utilities";
