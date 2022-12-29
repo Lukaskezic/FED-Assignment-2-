@@ -22,7 +22,7 @@
   },
   "include": [
     "src",
-    "src/layoutReact/*.tsx",
+    "src/Layout/*.tsx",
     "src/Pages/*tsx",
     "**/*.ts",
     "**/*.tsx",

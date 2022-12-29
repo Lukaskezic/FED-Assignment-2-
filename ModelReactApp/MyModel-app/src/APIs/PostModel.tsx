@@ -12,13 +12,13 @@ export const RegisterModel = async (data: ModelRegisterDto) =>
   });
 };
 
-export const useRegisteredModel = () => 
+export const AddModel = () => 
 {
   return useMutation(RegisterModel, 
     {
     onSuccess: () => 
     {
-      console.log("Model has succesfully been created been created");
+      console.log("A model has successfully been added");
     },
     onError: (error) => 
     {

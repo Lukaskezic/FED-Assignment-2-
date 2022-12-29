@@ -2,7 +2,7 @@ import type { JobModelDto } from "../Interface/JobInterface";
 import { useMutation, useQueryClient } from "react-query";
 import { MakeRequest } from "./Utilities";
 
-export const registerAJob = async (data: JobModelDto) => 
+export const RegisterModelToJob = async (data: JobModelDto) => 
 {
   return await MakeRequest(
   {
@@ -12,21 +12,21 @@ export const registerAJob = async (data: JobModelDto) =>
   });
 };
 
-
-
-export const UseAddedModel = () => 
+export const AddModelToJob = () => 
 {
   const queryClient = useQueryClient();
-  return useMutation(registerAJob, 
+  return useMutation(RegisterModelToJob, 
   {
     onSuccess: () => 
     {
-      console.log("The model has been added to the job successfully");
+      console.log("A model has successfully been added to the job");
     },
-    onError: (error) => {
+    onError: (error) =>
+    {
       console.log((error as any).message);
     },
-    onSettled: () => {
+    onSettled: () =>
+    {
       queryClient.invalidateQueries("jobsKey");
     },
   });

@@ -1,11 +1,11 @@
 import { ChangeEvent, useState } from "react";
-import { UseAddedModel } from "../APIs/PostAddModelToJob";
+import { AddModelToJob } from "../APIs/PostAddModelToJob";
 import type { JobModelDto } from "../Interface/JobInterface";
 import { Button, TextInput, Label } from "flowbite-react";
 import React from "react";
 
 const AddModel = () => {
-  const { mutate: register } = UseAddedModel();
+  const { mutate: register } = AddModelToJob();
   const [modelId, setModelId] = useState<number>(0);
   const [jobId, setJobId] = useState<number>(0);
 

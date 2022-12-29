@@ -6,14 +6,14 @@ import RemoveModel from "../PageComponent/RemoveModelsFromJobs";
 import CreateModel from "../PageComponent/CreateAModel";
 import CreateJob from "../PageComponent/CreateAJob";
 import AddModel from "../PageComponent/AddModel";
-import GetTheManagerList from "../APIs/GetManager";
-import GetTheJobList from "../APIs/GetJob";
+import GetManagers from "../APIs/GetManager";
+import GetJobs from "../APIs/GetJob";
 
 const Mananger = () => 
 {
-  const { data: jobsData } = GetTheJobList();
+  const { data: jobsData } = GetJobs();
   console.log("Job ", jobsData);
-  const { data: managerData, isLoading, isError, error } = GetTheManagerList();
+  const { data: managerData, isLoading, isError, error } = GetManagers();
   console.log("Manager ", managerData);
   if (isLoading) {
     return <Spinner color="info" size="xl" />;

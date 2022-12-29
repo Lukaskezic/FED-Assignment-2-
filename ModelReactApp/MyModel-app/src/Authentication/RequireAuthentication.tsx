@@ -3,7 +3,8 @@ import UseAuthentication from "./UseAuthentication";
 import JwtParser from "../APIs/jwtParse";
 import React from "react";
 
-const RequireAuthentication = ({ 
+const RequireAuthentication = (
+  { 
     allowedRoles 
   }: 
   { 

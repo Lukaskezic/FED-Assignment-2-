@@ -6,8 +6,6 @@ const Navigation = () =>
   return (
     <nav className="flex justify-center">
       <Navbar
-        fluid={true}
-        rounded={false}
         className="sticky top-0 shadow-md bg-grey w-full flex justify-center "
       >
         <Navbar.Toggle className="hover:text-green-500 md:hover:text-blue-500" />

@@ -1,12 +1,12 @@
 import { useMutation } from "react-query";
 import { MakeRequest } from "./Utilities";
 import JwtParser from "./jwtParse";
-import useAuth from "../Authentication/UseAuthentication";
+import UseAuthentication from "../Authentication/UseAuthentication";
 import { useNavigate } from "react-router-dom";
 import type { AccountLoginDto } from "../Interface/AccountInterface";
 
 
-export const login = async (data: AccountLoginDto) => 
+export const RegisterLogin = async (data: AccountLoginDto) => 
 {
   localStorage.setItem("Username", data.email);
   localStorage.setItem("Password", data.password);
@@ -20,13 +20,13 @@ export const login = async (data: AccountLoginDto) =>
   return response;
 };
 
-export const useLogin = () => 
+export const AddLogin = () => 
 {
-  const { setAuth } = useAuth();
+  const { setAuth } = UseAuthentication();
 
   const navigate = useNavigate();
 
-  return useMutation(login, 
+  return useMutation(RegisterLogin, 
     {
     onSuccess: (account) => 
     {

@@ -1,11 +1,11 @@
 import AddExpense from "../PageComponent/AddExpense";
 import JobList from "../PageComponent/GetJob";
 import { Spinner } from "flowbite-react";
-import GetJobList from "../APIs/GetJob"
+import GetJobs from "../APIs/GetJob"
 
 const Model = () => 
 {
-  const { data: jobsData, isLoading, isError, error } = GetJobList();
+  const { data: jobsData, isLoading, isError, error } = GetJobs();
   console.log("job ", jobsData);
 
   if (isLoading) {

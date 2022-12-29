@@ -1,9 +1,17 @@
 import { useLocation, Navigate, Outlet } from "react-router-dom";
-import useAuth from "./UseAuthhentication";
-import JwtParser from "../api/jwtParse";
+import UseAuthentication from "./UseAuthentication";
+import JwtParser from "../APIs/jwtParse";
+import React from "react";
 
-const RequireAuth = ({ allowedRoles }: { allowedRoles: any }) => {
-  const { auth } = useAuth();
+const RequireAuthentication = (
+  {
+    allowedRoles
+  }:
+  {
+    allowedRoles: any
+  }) =>
+{
+  const { auth } = UseAuthentication();
   const location = useLocation();
   const roles = JwtParser(localStorage.getItem("token") as string)[
     "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
@@ -17,4 +25,4 @@ const RequireAuth = ({ allowedRoles }: { allowedRoles: any }) => {
   );
 };
 
-export default RequireAuth;
+export default RequireAuthentication;

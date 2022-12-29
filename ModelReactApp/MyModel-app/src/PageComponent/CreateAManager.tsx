@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from "react";
 import type { ManagerRegisterDto } from "../Interface/ManagerInterface";
-import { UserRegisteredManager } from "../APIs/PostManager";
+import { AddManager } from "../APIs/PostManager";
 import { Button, Label, TextInput } from "flowbite-react";
 import React from "react";
 
 const CreateAManager = () => 
 {
-  const { mutate: register } = UserRegisteredManager();
+  const { mutate: register } = AddManager();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");

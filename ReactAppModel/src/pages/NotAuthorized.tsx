@@ -1,4 +1,5 @@
-const NotAuthorized = () => {
+const NotAuthorized = () =>
+{
   return <div>NotAuthorized</div>;
 };
 

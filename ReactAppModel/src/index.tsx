@@ -5,7 +5,7 @@ import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { AuthProvider } from "./authentication/AuthProvider";
+import { ProvideAuthentication } from "./Authentication/ProvideAuthentication";
 
 const queryClient = new QueryClient();
 
@@ -17,11 +17,11 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <AuthProvider>
+        <ProvideAuthentication>
           <Routes>
             <Route path="/*" element={<App />} />
           </Routes>
-        </AuthProvider>
+        </ProvideAuthentication>
         <ReactQueryDevtools initialIsOpen={false} position="bottom-left" />
       </BrowserRouter>
     </QueryClientProvider>

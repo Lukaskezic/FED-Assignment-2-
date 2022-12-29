@@ -1,16 +1,19 @@
 import { ChangeEvent, useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
-import type { AccountLoginDto } from "../interface/AccountInterface";
-import { useLogin } from "../api/LoginAPI";
+import type { AccountLoginDto } from "../DTOs/AccountDTO";
+import { AddLogin } from "../APIs/PostLogin";
 
-const Login = () => {
+const Login = () =>
+{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { mutate: login } = useLogin();
+  const { mutate: login } = AddLogin();
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: any) =>
+  {
     e.preventDefault();
-    const userLogin: AccountLoginDto = {
+    const userLogin: AccountLoginDto =
+    {
       email: email,
       password: password,
     };
@@ -21,11 +24,7 @@ const Login = () => {
       <form className="flex flex-col items-center">
         <div className="flex flex-col items-center py-2">
           <Label className="mx-4 pb-2">Email</Label>
-          <TextInput
-            type="email"
-            required
-            placeholder="johndoe@mail.com"
-            value={email}
+          <TextInput type="email" required placeholder="mikedean@mail.com" value={email}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setEmail(e.target.value)
             }
@@ -34,11 +33,7 @@ const Login = () => {
 
         <div className="flex flex-col items-center py-2">
           <Label className="mx-4 pb-2">Password</Label>
-          <TextInput
-            type="Password"
-            required
-            placeholder="********"
-            value={password}
+          <TextInput type="Password" required placeholder="********" value={password}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setPassword(e.target.value)
             }

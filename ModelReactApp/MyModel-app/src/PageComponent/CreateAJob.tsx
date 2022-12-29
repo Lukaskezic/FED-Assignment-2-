@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChangeEvent } from "react";
 import type { JobRegisterDto } from "../Interface/JobInterface";
-import { useRegisterJob } from "../APIs/PostJob";
+import { AddJob } from "../APIs/PostJob";
 import { Button, Label, TextInput } from "flowbite-react";
 import React from "react";
 
@@ -13,7 +13,7 @@ export default function CreateJob()
   const [location, setLocation] = useState("");
   const [comments, setComments] = useState("");
 
-  const { mutate: register } = useRegisterJob();
+  const { mutate: register } = AddJob();
 
   const handleSubmit = () => {
     const job: JobRegisterDto = {
@@ -30,7 +30,7 @@ export default function CreateJob()
     <div className="border rounded border-blue-400 bg-white overflow-hidden shadow-lg flex p-4 justify-center">
       <div className="flex flex-col">
         <form className="flex flex-wrap">
-          <div className="flex flex-col mx-2">
+          <div className="flex flex-col">
             <Label>Customer</Label>
             <TextInput
               type="Text"
@@ -42,7 +42,7 @@ export default function CreateJob()
               }
             />
           </div>
-          <div className="flex flex-col mx-2">
+          <div className="flex flex-col">
             <Label>Start Date</Label>
             <TextInput
               type="Date"
@@ -54,7 +54,7 @@ export default function CreateJob()
               }
             />
           </div>
-          <div className="flex flex-col mx-2">
+          <div className="flex flex-col">
             <Label>Days</Label>
             <TextInput
               required
@@ -68,7 +68,7 @@ export default function CreateJob()
               }
             />
           </div>
-          <div className="flex flex-col mx-2">
+          <div className="">
             <Label>Location</Label>
             <TextInput
               type="Text"
@@ -80,19 +80,7 @@ export default function CreateJob()
               }
             />
           </div>
-          <div className="flex flex-col mx-2">
-            <Label> Comments</Label>
-            <TextInput
-              type="Text"
-              required
-              placeholder="Comments"
-              value={comments}
-              onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setComments(e.target.value)
-              }
-            />
-          </div>
-          <div className="flex flex-col mx-2">
+          <div className="">
             <Label>Create a Job</Label>
             <Button onClick={handleSubmit}>Submit</Button>
           </div>

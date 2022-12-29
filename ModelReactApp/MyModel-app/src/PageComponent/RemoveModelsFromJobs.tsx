@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from "react";
-import { useJobRemoveModel } from "../APIs/RemoveModelFromJob";
+import { RemoveModelFromJob } from "../APIs/RemoveModelFromJob";
 import type { JobModelDto } from "../Interface/JobInterface";
 import { Button, TextInput, Label } from "flowbite-react";
 import React from "react";
 
 const RemoveModelFromTheJob = () => 
 {
-  const { mutate: register } = useJobRemoveModel();
+  const { mutate: register } = RemoveModelFromJob();
   const [modelId, setModelId] = useState<number>(0);
   const [jobId, setJobId] = useState<number>(0);
 

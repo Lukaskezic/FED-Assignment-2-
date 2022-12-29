@@ -1,7 +1,8 @@
 import { useMutation } from "react-query";
 import { MakeRequest } from "./Utilities";
 import type { JobModelDto } from "../Interface/JobInterface";
-export const register = async (data: JobModelDto) => 
+
+export const RegisterModelFromJob = async (data: JobModelDto) => 
 {
   return await MakeRequest({
     url: `Jobs/${data.jobId}/model/${data.modelId}`,
@@ -10,13 +11,16 @@ export const register = async (data: JobModelDto) =>
   });
 };
 
-export const useJobRemoveModel = () => 
+export const RemoveModelFromJob = () => 
 {
-  return useMutation(register, {
+  return useMutation(RegisterModelFromJob, {
     onSuccess: () => 
     {
-      console.log("The model has been removed from the job successfully");
+      console.log("A model has successfully been removed from a job");
     },
-    onError: (error) => {},
+    onError: (error) => 
+    {
+      console.log((error as any).message);
+    },
   });
 };

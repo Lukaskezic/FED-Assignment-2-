@@ -1,13 +1,13 @@
 import { ChangeEvent, useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
 import type { AccountLoginDto } from "../Interface/AccountInterface";
-import { useLogin } from "../APIs/PostLogin";
+import { AddLogin } from "../APIs/PostLogin";
 
 const Login = () => 
 {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { mutate: login } = useLogin();
+  const { mutate: login } = AddLogin();
 
   const handleLoginSubmit = (e: any) => 
   {

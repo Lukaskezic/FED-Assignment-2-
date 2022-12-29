@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import { Button, Label, TextInput } from "flowbite-react";
 import type { ModelRegisterDto } from "../Interface/ModelInterface";
-import { useRegisteredModel } from "../APIs/PostModel";
+import { AddModel } from "../APIs/PostModel";
 import React from "react";
 const CreateAModel = () => 
 {
@@ -23,7 +23,7 @@ const CreateAModel = () =>
   const [comments, setComments] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const { mutate: register } = useRegisteredModel();
+  const { mutate: register } = AddModel();
 
   const handleSubmit = () => 
   {

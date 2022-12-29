@@ -1,31 +1,23 @@
-import { Spinner } from "flowbite-react";
-import GetManagerList from "../api/ManagerAPI";
-import GetJobList from "../api/JobListApi";
-import CreateManager from "../PageComponents/CreateManagerComponent";
-import CreateModel from "../PageComponents/CreateModelComponent";
-import CreateJob from "../PageComponents/CreateJobComponent";
-import AddModel from "../PageComponents/AddModelComponent";
-import ManagerList from "../PageComponents/ManagerListComponent";
-import JobList from "../PageComponents/JobListComponent";
-import RemoveModel from "../PageComponents/RemoveModelComponent";
+import GetManagers from "../APIs/GetManager";
+import GetJobs from "../APIs/GetJob";
+import CreateManager from "../Components/CreateManager";
+import CreateModel from "../Components/CreateModel";
+import CreateJob from "../Components/CreateJob";
+import AddModel from "../Components/AddModel";
+import ManagerList from "../Components/GetManagerList";
+import JobList from "../Components/GetJobList";
+import RemoveModel from "../Components/RemoveModelsFromJob";
 
-const Mananger = () => {
-  const { data: jobsData } = GetJobList();
+const Mananger = () =>
+{
+  const { data: jobsData } = GetJobs();
   console.log("job ", jobsData);
 
-  const { data: managerData, isLoading, isError, error } = GetManagerList();
+  const { data: managerData} = GetManagers();
   console.log("manager ", managerData);
-  if (isLoading) {
-    return <Spinner color="info" size="xl" />;
-  }
-
-  if (isError) {
-    return <p>{(error as any).message} </p>;
-  }
 
   return (
     <>
-      <div className="border-4 rounded border-blue-500 p-4">
         <CreateJob />
         <CreateManager />
         <AddModel />
@@ -33,7 +25,6 @@ const Mananger = () => {
         <CreateModel />
         <ManagerList managerData={managerData?.data} />
         <JobList jobList={jobsData?.data} />
-      </div>
     </>
   );
 };

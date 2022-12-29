@@ -1,12 +1,11 @@
 import { ChangeEvent, useState } from "react";
-import { UseCreatedExpense } from "../APIs/PostExpense";
+import { AddExpense } from "../APIs/PostExpense";
 import { ExpenseDto } from "../Interface/ExpenseInterface";
 import { Button, TextInput, Label } from "flowbite-react";
 
-
 const AddAnExpense = () => 
 {
-  const { mutate: expense } = UseCreatedExpense();
+  const { mutate: expense } = AddExpense();
   const [modelId, setModelId] = useState<number>(0);
   const [jobId, setJobId] = useState<number>(0);
   const [amount, setAmount] = useState<number>(0);
